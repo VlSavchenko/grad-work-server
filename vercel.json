@@ -8,7 +8,7 @@
   ],
   "routes": [
     {
-      "src": "/generate-pdf/(.*)",
+      "src": "/generate-pdf",
       "dest": "index.js"
     }
   ]
