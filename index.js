@@ -63,7 +63,7 @@ app.listen(port, () => {
 // }
 
 async function generatePDF() {
-  const browser = await puppeteer.launch(); //{headless:false}
+  const browser = await puppeteer.launch({ headless: "new" }); //{headless:false}
   const page = await browser.newPage();
   await page.setContent(CV5);
   const pdfBuffer = await page.pdf({ format: 'A4' });
