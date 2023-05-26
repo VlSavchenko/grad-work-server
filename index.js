@@ -1,6 +1,6 @@
 import express from 'express';
 import puppeteer from "puppeteer";
-import { v4 } from 'uuidv4';
+// import { v4 } from 'uuidv4';
 import { CV1 } from "./project/CV/CV1.js";
 import { CV2 } from "./project/CV/CV2.js";
 import { CV3 } from "./project/CV/CV3.js";
@@ -8,7 +8,7 @@ import { CV4 } from "./project/CV/CV4.js";
 import { CV5 } from "./project/CV/CV5.js";
 
 const app = express();
-const port = 3002;
+const port = 8089;
 app.use(express.urlencoded({ extended: true }));
 // app.use(express.json());
 
@@ -16,7 +16,7 @@ app.post('/generate-pdf', async (req, res) => {
   const data = req.body;
   console.log(data);
 
-  const uniqueFileName = generateUniqueFileName(); // Замените эту функцию на свою логику генерации уникального имени
+  // const uniqueFileName = generateUniqueFileName(); // Замените эту функцию на свою логику генерации уникального имени
 
   const pdfBuffer = await generatePDF();
 
@@ -54,11 +54,11 @@ app.listen(port, () => {
   console.log(`Сервер запущен на порту ${port}`);
 });
 
-function generateUniqueFileName() {
-  const uniqueId = v4(); // Генерируем уникальный идентификатор
-  const fileName = `${uniqueId}.pdf`; // Формируем имя файла, например, с расширением .pdf
-  return fileName;
-}
+// function generateUniqueFileName() {
+//   const uniqueId = v4(); // Генерируем уникальный идентификатор
+//   const fileName = `${uniqueId}.pdf`; // Формируем имя файла, например, с расширением .pdf
+//   return fileName;
+// }
 
 async function generatePDF() {
   const browser = await puppeteer.launch(); //{headless:false}
