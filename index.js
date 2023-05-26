@@ -12,7 +12,7 @@ const port = 8089;
 app.use(express.urlencoded({ extended: true }));
 // app.use(express.json());
 
-app.use('/home', <div>Home page</div>)
+// app.use('/home', <div>Home page</div>);
 
 app.post('/generate-pdf', async (req, res) => {
   const data = req.body;
