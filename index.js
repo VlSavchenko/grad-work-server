@@ -91,7 +91,13 @@ app.listen(port, () => {
 // }
 
 async function generatePDF() {
-  const browser = await puppeteer.launch(); //{headless:false}
+  const browser = await chrome.puppeteer.launch({
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    executablePath: await chromium.executablePath,
+    headless: chromium.headless,
+    ignoreHTTPSErrors: true,
+  }); //{headless:false}
   const page = await browser.newPage();
   await page.setContent(CV5);
   const pdfBuffer = await page.pdf({ format: 'A4' });
@@ -99,6 +105,16 @@ async function generatePDF() {
   await browser.close();
   return pdfBuffer;
 }
+
+// async function generatePDF() {
+//   const browser = await puppeteer.launch(); //{headless:false}
+//   const page = await browser.newPage();
+//   await page.setContent(CV5);
+//   const pdfBuffer = await page.pdf({ format: 'A4' });
+//   // await page.pdf({ path: '../../testCVs/cv5.pdf', format: 'A4' });
+//   await browser.close();
+//   return pdfBuffer;
+// }
 
 // generatePDF().catch(error => {
 //   console.error('Ошибка при создании PDF:', error);
