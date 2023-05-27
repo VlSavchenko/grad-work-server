@@ -1,11 +1,21 @@
 import express from 'express';
-import puppeteer from "puppeteer";
+
 // import { v4 } from 'uuidv4';
 import { CV1 } from "./project/CV/CV1.js";
 import { CV2 } from "./project/CV/CV2.js";
 import { CV3 } from "./project/CV/CV3.js";
 import { CV4 } from "./project/CV/CV4.js";
 import { CV5 } from "./project/CV/CV5.js";
+
+let chrome = {};
+let puppeteer;
+
+if (process.env.AWS_LAMBDA_FUNCTION) {
+  chrome = require('chrome-aws-lambda');
+  puppeteer = require('puppeteer-core');
+} else {
+  puppeteer = require('puppeteer')
+}
 
 const app = express();
 const port = 8089;
@@ -15,6 +25,17 @@ app.use(express.urlencoded({ extended: true }));
 // app.use('/home', <div>Home page</div>);
 
 app.post('/generate-pdf', async (req, res) => {
+  let options = {};
+
+  if (process.env.AWS_LAMBDA_FUNCTION_VERSION) {
+    options = {
+      args: [...chrome.args, "--hide-scrollbars", "--disable-web-security"],
+      defaultViewport: chrome.defaultViewport,
+      executablePath: await chrome.executablePath,
+      headless: true,
+      ignoreHTTPSErrors: true,
+    };
+  }
   const data = req.body;
   console.log(data);
 
