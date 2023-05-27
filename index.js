@@ -26,7 +26,7 @@ if (process.env.AWS_LAMBDA_FUNCTION) {
 
 // const app = express();
 const port = 8089;
-app.use(express.urlencoded({ extended: true }));
+app.use(app.urlencoded({ extended: true }));
 // app.use(express.json());
 
 // app.use('/home', <div>Home page</div>);
