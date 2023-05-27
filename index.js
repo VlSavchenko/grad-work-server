@@ -93,12 +93,11 @@ app.listen(port, () => {
 async function generatePDF() {
   console.log('In generatePDF');
   const browser = await chrome.puppeteer.launch({
+    args: chrome.args,
+    defaultViewport: chrome.defaultViewport,
+    executablePath: await chrome.executablePath,
     headless: "new",
-    // args: chrome.args,
-    // defaultViewport: chrome.defaultViewport,
-    // executablePath: await chrome.executablePath,
-    // headless: chrome.headless,
-    // ignoreHTTPSErrors: true,
+    ignoreHTTPSErrors: true,
   }); //{headless:false}
   const page = await browser.newPage();
   console.log('after newPage');
