@@ -1,4 +1,5 @@
-import express from 'express';
+// import express from 'express';
+const app = require('express')();
 
 // import { v4 } from 'uuidv4';
 // import { CV1 } from "./project/CV/CV1.js";
@@ -23,7 +24,7 @@ if (process.env.AWS_LAMBDA_FUNCTION) {
   puppeteer = require('puppeteer')
 }
 
-const app = express();
+// const app = express();
 const port = 8089;
 app.use(express.urlencoded({ extended: true }));
 // app.use(express.json());
@@ -90,7 +91,7 @@ app.listen(port, () => {
 // }
 
 async function generatePDF() {
-  const browser = await puppeteer.launch({ headless: "new" }); //{headless:false}
+  const browser = await puppeteer.launch(); //{headless:false}
   const page = await browser.newPage();
   await page.setContent(CV5);
   const pdfBuffer = await page.pdf({ format: 'A4' });
