@@ -17,11 +17,11 @@ const CV5 = require('./project/CV/CV5.js')
 let chrome = {};
 let puppeteer;
 
-if (process.env.AWS_LAMBDA_FUNCTION) {
-  chrome = require('chrome-aws-lambda');
-  puppeteer = require('puppeteer-core');
+if (process.env.AWS_LAMBDA_FUNCTION_VERSION) {
+  chrome = require("chrome-aws-lambda");
+  puppeteer = require("puppeteer-core");
 } else {
-  puppeteer = require('puppeteer');
+  puppeteer = require("puppeteer");
 }
 
 const app = express();
