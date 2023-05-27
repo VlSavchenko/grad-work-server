@@ -1,5 +1,5 @@
 
-export const CV2 = `
+const CV2 = `
 <!DOCTYPE html>
 <html>
 <style>
@@ -305,3 +305,5 @@ export const CV2 = `
 </body>
 </html>
 `;
+
+module.exports = CV2;
