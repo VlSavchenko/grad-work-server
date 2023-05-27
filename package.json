@@ -20,6 +20,8 @@
   },
   "devDependencies": {
     "heroku": "^8.1.4",
-    "puppeteer": "^20.3.0"
+    "puppeteer": "^20.3.0",
+    "chrome-aws-lambda": "^10.1.0",
+    "puppeteer-core": "^10.1.0"
   }
 }
