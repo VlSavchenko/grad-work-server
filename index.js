@@ -1,5 +1,5 @@
 // import express from 'express';
-const app = require('express')();
+const app = require('express');
 
 // import { v4 } from 'uuidv4';
 // import { CV1 } from "./project/CV/CV1.js";
@@ -21,7 +21,7 @@ if (process.env.AWS_LAMBDA_FUNCTION) {
   chrome = require('chrome-aws-lambda');
   puppeteer = require('puppeteer-core');
 } else {
-  puppeteer = require('puppeteer')
+  puppeteer = require('puppeteer');
 }
 
 // const app = express();
