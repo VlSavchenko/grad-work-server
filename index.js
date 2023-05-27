@@ -1,5 +1,5 @@
 // import express from 'express';
-const app = require('express');
+const express = require('express');
 
 // import { v4 } from 'uuidv4';
 // import { CV1 } from "./project/CV/CV1.js";
@@ -24,9 +24,9 @@ if (process.env.AWS_LAMBDA_FUNCTION) {
   puppeteer = require('puppeteer');
 }
 
-// const app = express();
+const app = express();
 const port = 8089;
-app.use(app.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 // app.use(express.json());
 
 // app.use('/home', <div>Home page</div>);
