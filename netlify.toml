@@ -1,10 +1,11 @@
 [build]
-  command = "npm install"
-  publish = "dist"  
+  functions = "functions"
 
-[build.environment]
-  NODE_VERSION = "14" 
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
 
-[[functions]]
+[functions]
   directory = "functions"
-  include = "index.js"
+  node_bundler = "esbuild"
