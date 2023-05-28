@@ -8,11 +8,11 @@ const express = require('express');
 // import { CV4 } from "./project/CV/CV4.js";
 // import { CV5 } from "./project/CV/CV5.js";
 
-const CV1 = require('./project/CV/CV1.js')
-const CV2 = require('./project/CV/CV2.js')
-const CV3 = require('./project/CV/CV3.js')
-const CV4 = require('./project/CV/CV4.js')
-const CV5 = require('./project/CV/CV5.js')
+const CV1 = require('../project/CV/CV1.js')
+const CV2 = require('../project/CV/CV2.js')
+const CV3 = require('../project/CV/CV3.js')
+const CV4 = require('../project/CV/CV4.js')
+const CV5 = require('../project/CV/CV5.js')
 
 let chrome = {};
 let puppeteer;

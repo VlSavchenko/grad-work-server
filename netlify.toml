@@ -4,3 +4,7 @@
 
 [build.environment]
   NODE_VERSION = "14" 
+
+[[functions]]
+  directory = "functions"
+  include = "index.js"
