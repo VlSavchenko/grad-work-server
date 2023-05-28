@@ -8,13 +8,11 @@ const express = require('express');
 // import { CV4 } from "./project/CV/CV4.js";
 // import { CV5 } from "./project/CV/CV5.js";
 
-const CV1 = require('../project/CV/CV1.js');
-const CV2 = require('../project/CV/CV2.js');
-const CV3 = require('../project/CV/CV3.js');
-const CV4 = require('../project/CV/CV4.js');
-const CV5 = require('../project/CV/CV5.js');
-
-const generatePDF = require('./generatePDF');
+const CV1 = require('../project/CV/CV1.js')
+const CV2 = require('../project/CV/CV2.js')
+const CV3 = require('../project/CV/CV3.js')
+const CV4 = require('../project/CV/CV4.js')
+const CV5 = require('../project/CV/CV5.js')
 
 let chrome = {};
 let puppeteer;
@@ -48,25 +46,15 @@ app.post('/generate-pdf', async (req, res) => {
   const data = req.body;
   console.log(data);
 
-  try {
-    const pdfBuffer = await generatePDF();
-    res.setHeader('Content-Type', 'application/pdf');
-    res.setHeader('Content-Disposition', 'attachment; filename=CV.pdf');
-    res.send(pdfBuffer);
-  } catch (error) {
-    console.error('Ошибка при генерации PDF:', error);
-    res.status(500).send('Произошла ошибка при генерации PDF');
-  }
+  // const uniqueFileName = generateUniqueFileName(); // Замените эту функцию на свою логику генерации уникального имени
 
-  // const pdfBuffer = await generatePDF();
+  const pdfBuffer = await generatePDF();
 
-  // res.setHeader('Content-Type', 'application/pdf');
-  // res.setHeader('Content-Disposition', `attachment; filename=CV.pdf`);
+  res.setHeader('Content-Type', 'application/pdf');
+  res.setHeader('Content-Disposition', `attachment; filename=CV.pdf`);
 
-  // // Отправка PDF-файла в ответе
-  // res.send(pdfBuffer);
-
-
+  // Отправка PDF-файла в ответе
+  res.send(pdfBuffer);
 
   // // Сохраните файл на сервере
   // const filePath = path.join('../../testCVs/', uniqueFileName); // Замените путь на путь к вашей директории
@@ -104,26 +92,26 @@ app.listen(port, () => {
 
 // aaa
 
-// async function generatePDF() {
-//   console.log('In generatePDF');
-//   const browser = await chrome.puppeteer.launch({
-//     args: chrome.args,
-//     defaultViewport: chrome.defaultViewport,
-//     executablePath: await chrome.executablePath,
-//     headless: "new",
-//     ignoreHTTPSErrors: true,
-//   }); //{headless:false}
-//   const page = await browser.newPage();
-//   console.log('after newPage');
-//   await page.setContent(CV5);
-//   console.log('after setContent');
-//   const pdfBuffer = await page.pdf({ format: 'A4' });
-//   console.log('after creating pdf');
-//   // await page.pdf({ path: '../../testCVs/cv5.pdf', format: 'A4' });
-//   await browser.close();
-//   console.log('after browser.close');
-//   return pdfBuffer;
-// }
+async function generatePDF() {
+  console.log('In generatePDF');
+  const browser = await chrome.puppeteer.launch({
+    args: chrome.args,
+    defaultViewport: chrome.defaultViewport,
+    executablePath: await chrome.executablePath,
+    headless: "new",
+    ignoreHTTPSErrors: true,
+  }); //{headless:false}
+  const page = await browser.newPage();
+  console.log('after newPage');
+  await page.setContent(CV5);
+  console.log('after setContent');
+  const pdfBuffer = await page.pdf({ format: 'A4' });
+  console.log('after creating pdf');
+  // await page.pdf({ path: '../../testCVs/cv5.pdf', format: 'A4' });
+  await browser.close();
+  console.log('after browser.close');
+  return pdfBuffer;
+}
 
 // async function generatePDF() {
 //   const browser = await puppeteer.launch(); //{headless:false}

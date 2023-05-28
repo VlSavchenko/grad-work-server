@@ -2,8 +2,8 @@
   functions = "functions"
 
 [[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/:splat"
+  from = "/generate-pdf"
+  to = "/.netlify/functions/index"
   status = 200
 
 [functions]
