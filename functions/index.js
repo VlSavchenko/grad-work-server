@@ -69,8 +69,8 @@ module.exports = { handler };
 
 
 // Запускаем сервер и слушаем указанный порт
-app.listen(port, () => {
-  console.log(`Сервер запущен на порту ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Сервер запущен на порту ${port}`);
+// });
 
 
