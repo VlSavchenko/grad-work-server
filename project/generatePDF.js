@@ -9,7 +9,7 @@ import CV5 from './CV/CV5.js';
 const CVs = { 'CV1': CV1, 'CV2': CV2, 'CV3': CV3, 'CV4': CV4, 'CV5': CV5 };
 
 async function generatePDF(data, photo) {
-  const browser = await launch({ headless: false });
+  const browser = await launch({ headless: "new" });
   const page = await browser.newPage();
   const CV = CVs[data.CV];
   await page.setContent(CV);
@@ -167,7 +167,7 @@ async function generatePDF(data, photo) {
 
 
   const pdfBuffer = await page.pdf({ format: 'A4' });
-  // await browser.close();
+  await browser.close();
   return pdfBuffer;
 }
 
