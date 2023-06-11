@@ -148,34 +148,30 @@ const CV2 = `
   .CVContainer .cv2 .main .block {
     display: flex;
     flex-direction: column;
+    gap: 10px;
   }
 
-  .CVContainer .cv2 .main .block .list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
 
-  .CVContainer .cv2 .main .block .list .item {
+  .CVContainer .cv2 .main .block .item {
     display: flex;
     flex-direction: column;
     gap: 4px;
   }
 
-  .CVContainer .cv2 .main .block .list .item .placeAndPosition {
+  .CVContainer .cv2 .main .block .item .placeAndPosition {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
     gap: 2px 10px;
   }
 
-  .CVContainer .cv2 .main .block .list .item .placeAndPosition .place {
+  .CVContainer .cv2 .main .block .item .placeAndPosition .place {
     font-size: 16px;
     font-weight: 500;
     color: #F1B43E;
   }
 
-  .CVContainer .cv2 .main .block .list .item .placeAndPosition .position {
+  .CVContainer .cv2 .main .block .item .placeAndPosition .position {
     font-size: 14px;
     font-weight: 400;
     color: #F1B43E;
@@ -188,116 +184,76 @@ const CV2 = `
       <aside class="sidebar">
         <div class="personalInfo">
           <img class="photo"
-               src="https://i.yapx.ru/WDRME.png"
-               alt="user" />
+              id = "photo"
+              src="*"
+              alt="user" />
           <div class="nameAndPosition">
-            <div class="blockTitle">Эндрю Маллен</div>
-            <div class="yellowDescription">
-              Фронтенд разработчик
+            <div class="blockTitle" id="name"></div>
+            <div class="yellowDescription" id="position">
+              
             </div>
           </div>
           <div class="links">
-            <div>+11012223344</div>
-            <div>hello@andrew.com</div>
+            <div id="phone">+11012223344</div>
+            <div id="email">hello@andrew.com</div>
           </div>
         </div>
         <div class="skillsAndInterests">
           <div class="blockTitle">Навыки</div>
-          <div class="list">
-            <div>Веб-дизайн</div>
-            <div>Дизайн UX/UI</div>
-            <div>Тестирование юзабилити</div>
-            <div>Создание прототипов</div>
-            <div>Figma</div>
-            <div>After Effects</div>
-            <div>Webflow</div>
-            <div>Framer</div>
+          <div class="list" id="listOfSkills">
+            
           </div>
         </div>
         <div class="skillsAndInterests">
           <div class="blockTitle">Языки</div>
-          <div class="language">
-            <div>Русский</div>
-            <div>Английский</div>
+          <div class="language" id="languages">
+
           </div>
         </div>
       </aside>
       <aside class="main">
-        <div class="aboutBlock">
+        <div class="aboutBlock" id="aboutBlock">
           <div class="blockTitle">Обо мне</div>
-          <div class="grayText">
-            Я мультидисциплинарный дизайнер продуктов, специализирующийся на
-            программировании без кода и визуальной разработке.
+          <div class="grayText" id="aboutText">
+  
           </div>
         </div>
-        <div class="block">
+        <div class="block" id="experienceBlock">
           <div class="blockTitle">Опыт работы</div>
-          <div class="list">
-            <div class="item">
-              <div class="placeAndPosition">
-                <div class="place">Университет Джорджии</div>
-                <div class="position">Научный сотрудник</div>
-              </div>
-
-              <div class="grayText12">
-                Сентябрь 2019 - Настоящее время
-              </div>
-              <div class="grayText">
-                Подробная информация о вашем опыте работы приведена здесь.
-                Кратко продемонстрируйте что вы сделали и чего достигли на
-                этой должности. Вы можете также рассказать об инструментах,
-                которые вы использовали.
-              </div>
+          
+          <div class="item" id="experienceBlockContent">
+            <div class="placeAndPosition">
+              <div class="place" id="expCompany"></div>
+              <div class="position" id="expPosition"></div>
             </div>
-            <div class="item">
-              <div class="placeAndPosition">
-                <div class="place">Университет Джорджии</div>
-                <div class="position">Научный сотрудник</div>
-              </div>
-              <div class="grayText12">Jul 2015 - Aug 2019</div>
-              <div class="grayText">
-                Подробная информация о вашем опыте работы приведена здесь.
-                Кратко продемонстрируйте что вы сделали и чего достигли на
-                этой должности. Вы можете также рассказать об инструментах,
-                которые вы использовали.
-              </div>
+            <div class="grayText12" id="expDate">
+              
             </div>
-            <div class="item">
-              <div class="placeAndPosition">
-                <div class="place">Университет Джорджии</div>
-                <div class="position">Научный сотрудник</div>
-              </div>
-              <div class="grayText12">Jan 2012 - Mar 2015</div>
-              <div class="grayText">
-                Подробная информация о вашем опыте работы приведена здесь.
-                Кратко продемонстрируйте что вы сделали и чего достигли на
-                этой должности. Вы можете также рассказать об инструментах,
-                которые вы использовали.
-              </div>
+            <div class="grayText" id="expInfo">
+              
             </div>
           </div>
+            
+          
         </div>
-        <div class="block">
+        <div class="block" id="educationBlock">
           <div class="blockTitle">Образование</div>
-          <div class="list">
-            <div class="item">
+          
+            <div class="item" id="educationBlockContent">
               <div class="placeAndPosition">
-                <div class="place">Университет Джорджии</div>
-                <div class="position">
-                  Бакалавр компьютерных наук, Искусственный интеллект
+                <div class="place" id="edInstit"></div>
+                <div class="position" id="edDegree">
+                  
                 </div>
               </div>
-              <div class="grayText12">
-                Сентябрь 2019 - Настоящее время
+              <div class="grayText12" id="edDate">
+                
               </div>
-              <div class="grayText">
-                Здесь вы можете упомянуть о том, что вы изучали, и кратко
-                изложить подробности о том, что вы узнали. Вы также можете
-                упомянуть о любых внеклассных мероприятиях, которые вы
-                проводили в связи с вашей степенью.
+              <div class="grayText" id="edInfo">
+                
               </div>
             </div>
-          </div>
+          
         </div>
       </aside>
     </div>
@@ -306,4 +262,4 @@ const CV2 = `
 </html>
 `;
 
-module.exports = CV2;
+export default CV2;

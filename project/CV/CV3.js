@@ -107,6 +107,7 @@ const CV3 = `
 
   .CVContainer .cv3 .asides .blockTitle {
     font-size: 18px;
+    margin-bottom: 10px;
     font-weight: 500;
     color: #000;
     border-bottom: 1px solid #000;
@@ -124,14 +125,29 @@ const CV3 = `
   .CVContainer .cv3 .asides .sidebar .block {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 10px;
     word-wrap: break-word;
+    font-size: 12px;
+    font-weight: 500;
+    color: #454545;
   }
 
-  .CVContainer .cv3 .asides .sidebar .block .list {
+  .list{
     display: flex;
     flex-direction: column;
     gap: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #454545;
+  }
+
+  .listOfSkills{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 24px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #454545;
   }
 
   .CVContainer .cv3 .asides .main {
@@ -150,32 +166,32 @@ const CV3 = `
     word-wrap: break-word;
   }
 
-  .CVContainer .cv3 .asides .main .block .list {
+  .CVContainer .cv3 .asides .main .block  {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
 
-  .CVContainer .cv3 .asides .main .block .list .item {
+  .CVContainer .cv3 .asides .main .block .item {
     display: flex;
     flex-direction: column;
     gap: 4px;
   }
 
-  .CVContainer .cv3 .asides .main .block .list .item .placeAndPosition {
+  .CVContainer .cv3 .asides .main .block .item .placeAndPosition {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
     gap: 2px 10px;
   }
 
-  .CVContainer .cv3 .asides .main .block .list .item .placeAndPosition .place {
+  .CVContainer .cv3 .asides .main .block .item .placeAndPosition .place {
     font-size: 14px;
     font-weight: 700;
     color: #005BA2;
   }
 
-  .CVContainer .cv3 .asides .main .block .list .item .placeAndPosition .position {
+  .CVContainer .cv3 .asides .main .block .item .placeAndPosition .position {
     font-size: 12px;
     font-weight: 600;
     color: #005BA2;
@@ -187,134 +203,80 @@ const CV3 = `
     <div class="cv3">
       <div class="header">
         <div class="nameAndPosition">
-          <div class="name">Эндрю Маллен</div>
-          <div class="position">Фронтенд разработчик</div>
+          <div class="name" id="name"></div>
+          <div class="position" id="position"></div>
         </div>
         <img class="photo"
-             src="https://i.yapx.ru/WDRME.png"
-             alt="user" />
+            id = "photo"
+            src="*"
+            alt="user" />
       </div>
 
       <div class="asides">
         <aside class="main">
-          <div class="block">
+          <div class="block" id="educationBlock">
             <div class="blockTitle">Образование</div>
-            <div class="list">
-              <div class="item">
+            
+              <div class="item" id="educationBlockContent">
                 <div class="placeAndPosition">
-                  <div class="place">
-                    Информатика, Национальный университет Пембангунан
-                    ”Ветеран” Джокьякарта
+                  <div class="place" id="edInstit">
+                    
                   </div>
-                  <div class="position">
-                    Бакалавр компьютерных наук, Искусственный интеллект
-                  </div>
-                </div>
-                <div class="f10_400_black">
-                  ИЮНЬ 2018- ИЮНЬ 2022
-                </div>
-                <div class="f12_400_gray"></div>
-              </div>
-              <div class="item">
-                <div class="placeAndPosition">
-                  <div class="place">Школа дизайна</div>
-                  <div class="position">
-                    Бакалавр компьютерных наук, Искусственный интеллект
+                  <div class="position" id="edDegree">
+                    
                   </div>
                 </div>
-                <div class="f10_400_black">
-                  ИЮНЬ 2018- ИЮНЬ 2022
+                <div class="f10_400_black" id="edDate">
+                  
                 </div>
-                <div class="f12_400_gray"></div>
-              </div>
-            </div>
+                <div class="f12_400_gray" id="edInfo"></div>
+              </div>  
           </div>
 
-          <div class="block">
+          <div class="block" id="experienceBlock">
             <div class="blockTitle">Опыт работы</div>
-            <div class="list">
-              <div class="item">
+
+              <div class="item" id="experienceBlockContent">
                 <div class="placeAndPosition">
-                  <div class="place">ABC Company</div>
-                  <div class="position">Стажер по UX-дизайну</div>
+                  <div class="place" id="expCompany"></div>
+                  <div class="position" id="expPosition"></div>
                 </div>
-                <div class="f10_400_black">
-                  ЯНВАРЬ 2023 - НАСТОЯЩЕЕ ВРЕМЯ
+                <div class="f10_400_black" id="expDate">
+                  
                 </div>
-                <div class="f12_400_gray">
-                  Подробная информация о вашем опыте работы приведена здесь.
-                  Кратко продемонстрируйте что вы сделали и чего достигли на
-                  этой должности. Вы можете также рассказать об инструментах,
-                  которые вы использовали.
+                <div class="f12_400_gray" id="expInfo">
+                  
                 </div>
               </div>
-              <div class="item">
-                <div class="placeAndPosition">
-                  <div class="place">ABC Company</div>
-                  <div class="position">Стажер по UX-дизайну</div>
-                </div>
-                <div class="f10_400_black">
-                  ЯНВАРЬ 2023 - НАСТОЯЩЕЕ ВРЕМЯ
-                </div>
-                <div class="f12_400_gray">
-                  Подробная информация о вашем опыте работы приведена здесь.
-                  Кратко продемонстрируйте что вы сделали и чего достигли на
-                  этой должности. Вы можете также рассказать об инструментах,
-                  которые вы использовали.
-                </div>
-              </div>
-              <div class="item">
-                <div class="placeAndPosition">
-                  <div class="place">ABC Company</div>
-                  <div class="position">Стажер по UX-дизайну</div>
-                </div>
-                <div class="f10_400_black">
-                  ЯНВАРЬ 2023 - НАСТОЯЩЕЕ ВРЕМЯ
-                </div>
-                <div class="f12_400_gray">
-                  Подробная информация о вашем опыте работы приведена здесь.
-                  Кратко продемонстрируйте что вы сделали и чего достигли на
-                  этой должности. Вы можете также рассказать об инструментах,
-                  которые вы использовали.
-                </div>
-              </div>
-            </div>
+              
+              
+
           </div>
         </aside>
         <aside class="sidebar">
           <div class="block">
             <div class="blockTitle">Контакты</div>
-            <div class="list">
-              <div class="f14_500_black">hello@andrew.com</div>
-              <div class="f14_500_black">+11012223344</div>
-            </div>
+
+              <div class="f14_500_black" id="email"></div>
+              <div class="f14_500_black" id="phone"></div>
+
           </div>
-          <div class="block">
+          <div class="block" id="aboutBlock">
             <div class="blockTitle">Обо мне</div>
-            <div class="f12_500_gray">
-              У меня есть опыт работы в области информационных технологий, с
-              акцентом на разработку интерфейсов и дизайн пользовательского
-              интерфейса. Я отношусь к тому типу людей, которые хватаются за
-              любую возможность узнать что-то новое. Вот почему мне нравятся
-              сложные задачи. С этого момента я испытываю давление, требующее
-              быстрого обучения и приобретете много нового опыта.
+            <div class="f12_500_gray" id="aboutText">
+
             </div>
           </div>
           <div class="block">
             <div class="blockTitle">Навыки</div>
-            <div class="list">
-              <div class="f12_500_gray">Дизайн взаимодействия</div>
-              <div class="f12_500_gray">Визуальный дизайн</div>
-              <div class="f12_500_gray">
-                Пользовательское тестирование
-              </div>
+            <div class="listOfSkills" id="listOfSkills">
+              
             </div>
           </div>
           <div class="block">
             <div class="blockTitle">Языки</div>
-            <div class="list">
-              <div class="f12_500_gray">Английский</div>
-              <div class="f12_500_gray">Русский</div>
+            <div class="list" id="languages">
+              
             </div>
           </div>
         </aside>
@@ -325,4 +287,4 @@ const CV3 = `
 </html>
 `
 
-module.exports = CV3;
+export default CV3;

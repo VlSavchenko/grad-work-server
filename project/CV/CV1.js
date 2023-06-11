@@ -4,7 +4,7 @@ const CV1 = `
 <html>
   <style>
 
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
     *{
       font-family: "Inter";
@@ -94,10 +94,19 @@ const CV1 = `
       font-weight: 500;
     }
     .CVContainer .cv1 .sidebar .personalInfo .list {
-      color: white;
-      margin: 0;
-      padding-left: 25px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 24px;
       font-size: 14px;
+      color: #fff;
+    }
+
+    .CVContainer .cv1 .sidebar .personalInfo .language {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 14px;
+      color: #fff;
     }
     .CVContainer .cv1 .main {
       float: right;
@@ -178,160 +187,85 @@ const CV1 = `
         <aside class="sidebar" id="sidebar">
           <img
             class="photo"
-            src="https://i.yapx.ru/WDRME.png"
+            id = "photo"
+            src="*"
             alt="user"
           />
           <div class="nameAndPosition">
-            <p class="name">Эндрю Маллен</p>
-            <p class="position">Фронтенд разработчик</p>
+            <p class="name" id="name"></p>
+            <p class="position" id="position"></p>
           </div>
           <div class="personalInfo">
-            <div class="info">+11012223344</div>
-            <div class="info">hello@andrew.com</div>
+            <div class="info" id="phone"></div>
+            <div class="info" id="email"></div>
           </div>
-          <div class="personalInfo">
+          <div class="personalInfo" id="personalInfo">
             <div class="blockTitle">Навыки</div>
-            <ul class="list">
-              <li>HTML and CSS</li>
-              <li>
-                Языки программирования: Javascript, Typescript, Python, Java
-              </li>
-              <li>
-                Фреймворки/Библиотеки: Django, React, Next, Bootstrap,
-                TailwindCSS, etc
-              </li>
-              <li>
-                Понимание дизайна пользовательского интерфейса; Визуальной
-                иерархии, системы проектирования и т.д
-              </li>
-            </ul>
+            <div class="list" id="listOfSkills">
+            </div>
           </div>
           <div class="personalInfo">
             <div class="blockTitle">Языки</div>
-            <ul class="list">
-              <li>Английский</li>
-              <li>Русский</li>
-            </ul>
+            <div class="language" id="languages">
+            </div>
           </div>
         </aside>
         <aside class="main">
-          <div class="aboutBlock">
+          <div class="aboutBlock" id="aboutBlock">
             <div>
               <div class="blockTitle">Обо мне</div>
               <hr />
             </div>
-            <div class="aboutText">
-              У меня есть опыт работы в области информационных технологий, с
-              акцентом на разработку интерфейсов и дизайн пользовательского
-              интерфейса. Я отношусь к тому типу людей, которые хватаются за
-              любую возможность узнать что-то новое. Вот почему мне нравятся
-              сложные задачи. С этого момента я испытываю давление, требующее
-              быстрого обучения и приобретете много нового опыта.
+            <div class="aboutText" id="aboutText">
+              
             </div>
           </div>
-          <div class="block">
+          <div class="block" id="educationBlock">
             <div>
               <div class="blockTitle">Образование</div>
               <hr />
             </div>
-            <div class="blockContent">
-              <div class="time">2015 - 2019</div>
+            <div class="blockContent" id="educationBlockContent">
+              <div class="time" id="edDate"></div>
               <div class="d-flex flex-row">
                 <div class="text">
-                  <div class="f14_400">
-                    Информатика, Национальный университет Пембангунан ”Ветеран”
-                    Джокьякарта
+                  <div class="f14_400" id="edInstit">
+                    
                   </div>
-                  <div class="f12_600">
-                    Бакалавр компьютерных наук, Искусственный интеллект
+                  <div class="f12_600" id="edDegree">
+                    
                   </div>
-                  <div class="f12_400_grey">
-                    Здесь вы можете упомянуть о том, что вы изучали, и кратко
-                    изложить подробности о том, что вы узнали. Вы также можете
-                    упомянуть о любых внеклассных мероприятиях, которые вы
-                    проводили в связи с вашей степенью.
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="blockContent">
-              <div class="time">2015 - 2019</div>
-              <div class="d-flex flex-row">
-                <div class="text">
-                  <div class="f14_400">
-                    Информатика, Национальный университет Пембангунан ”Ветеран”
-                    Джокьякарта
-                  </div>
-                  <div class="f12_600">
-                    Бакалавр компьютерных наук, Искусственный интеллект
+                  <div class="f12_400_grey" id="edInfo">
+                    
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="block">
+          <div class="block" id="experienceBlock">
             <div>
               <div class="blockTitle">Опыт работы</div>
               <hr />
             </div>
-            <div class="blockContent">
-              <div class="time">2019 - Настоящее время</div>
+            <div class="blockContent" id="experienceBlockContent">
+              <div class="time" id="expDate"></div>
               <div class="d-flex flex-row">
                 <div class="text">
-                  <div class="f14_600">Upwork</div>
-                  <div class="f12_400">Фронтенд разработчик</div>
-                  <div class="f12_400_grey">
-                    Upwork - это американская платформа для фриланса, где
-                    предприятия и отдельные люди объединяются для того, чтобы
-                    вести бизнес. Я в настоящее время принимаются удаленные или
-                    внештатные работы по веб-разработке и дизайну
-                    пользовательского интерфейса с этой платформы.
+                  <div class="f14_600" id="expCompany"> </div>
+                  <div class="f12_400" id="expPosition"> </div>
+                  <div class="f12_400_grey" id="expInfo">
+                    
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="blockContent">
-              <div class="time">Октябрь 2020 - Август 2021</div>
-              <div class="d-flex flex-row">
-                <div class="text">
-                  <div class="f14_600">Currinda</div>
-                  <div class="f12_400">UI Engineer</div>
-                  <div class="f12_400_grey">
-                    Я являюсь членом команды инженеров вместе с тремя другими
-                    люди. Я отвечаю за создание дизайна интерфейса, который был
-                    бы одновременно удобен для пользователя и соответствовал
-                    принципам компании марка. Я также помогаю команде с
-                    разработкой интерфейса, особенно в создании систем
-                    проектирования и компонентов пользовательского интерфейса с
-                    помощью React.
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="blockContent">
-              <div class="time">Май 2019 - Ноябрь 2019</div>
-              <div class="d-flex flex-row">
-                <div class="text">
-                  <div class="f14_600">Bubays</div>
-                  <div class="f12_400">Веб разработчик</div>
-                  <div class="f12_400_grey">
-                    Я отвечаю за полноценную разработку и обслуживание веб-сайта
-                    компании. Работа включает в себя создание и поддержку
-                    веб-сайта с нуля. Кроме того, я являюсь единственный
-                    веб-разработчик в этой компании.
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </aside>
       </div>
     </div>
   </body>
-</html>`
+</html>`;
 
-module.exports = CV1;
+export default CV1;

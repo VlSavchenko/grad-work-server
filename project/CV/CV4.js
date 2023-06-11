@@ -104,38 +104,38 @@ const CV4 = `
     color: #4F4F4F;
   }
 
-  .CVContainer .cv4 .asides .block .list {
+  .CVContainer .cv4 .asides .block  {
     display: flex;
     flex-direction: column;
     gap: 14px;
   }
 
-  .CVContainer .cv4 .asides .block .list .item {
+  .CVContainer .cv4 .asides .block .item {
     display: flex;
     flex-direction: column;
     gap: 6px;
   }
 
-  .CVContainer .cv4 .asides .block .list .item .placeAndPosition {
+  .CVContainer .cv4 .asides .block .item .placeAndPosition {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
     gap: 2px 10px;
   }
 
-  .CVContainer .cv4 .asides .block .list .item .placeAndPosition .place {
+  .CVContainer .cv4 .asides .block .item .placeAndPosition .place {
     font-size: 16px;
     font-weight: 700;
     color: #333333;
   }
 
-  .CVContainer .cv4 .asides .block .list .item .placeAndPosition .position {
+  .CVContainer .cv4 .asides .block .item .placeAndPosition .position {
     font-size: 14px;
     font-weight: 400;
     color: #333333;
   }
 
-  .CVContainer .cv4 .asides .block .list .item .period {
+  .CVContainer .cv4 .asides .block .item .period {
     font-size: 12px;
     font-weight: 500;
     color: #A9A9A9;
@@ -192,121 +192,78 @@ const CV4 = `
     <div class="cv4">
       <div class="header">
         <div class="nameAndPosition">
-          <div class="name">Эндрю Маллен</div>
-          <div class="position">Фронтенд разработчик</div>
+          <div class="name" id="name"></div>
+          <div class="position" id="position"></div>
         </div>
         <img class="photo"
-             src="https://i.yapx.ru/WDRME.png"
-             alt="user" />
+            id = "photo"
+            src="*"
+            alt="user" />
       </div>
       <div class="asides">
         <aside class="sidebar">
           <div class="contacts">
-            <div>+11012223344</div>
-            <div>hello@andrew.com</div>
+            <div id="phone"></div>
+            <div id="email"></div>
           </div>
           <div class="skillsAndInterests">
             <div class="blockTitle">НАВЫКИ</div>
-            <div class="list">
-              <div>Веб-дизайн</div>
-              <div>Дизайн UX/UI</div>
-              <div>Тестирование юзабилити</div>
-              <div>Создание прототипов</div>
-              <div>Figma</div>
-              <div>After Effects</div>
-              <div>Webflow</div>
-              <div>Framer</div>
+            <div class="list" id="listOfSkills">
+              
             </div>
           </div>
           <div class="block">
             <div class="blockTitle">ЯЗЫКИ</div>
-            <div class="language">
-              <div>Русский</div>
-              <div>Английский</div>
+            <div class="language" id="languages">
+
             </div>
           </div>
         </aside>
         <aside class="main">
           <div class="block">
-            <div class="block">
+            <div class="block" id="aboutBlock">
               <div class="blockTitle">ОБО МНЕ</div>
-              <div class="description">
-                У меня есть опыт работы в области информационных технологий, с
-                акцентом на разработку интерфейсов и дизайн пользовательского
-                интерфейса. Я отношусь к тому типу людей, которые хватаются за
-                любую возможность узнать что-то новое. Вот почему мне нравятся
-                сложные задачи. С этого момента я испытываю давление,
-                требующее быстрого обучения и приобретете много нового опыта.
-              </div>
-            </div>
-            <div class="blockTitle">ОПЫТ РАБОТЫ</div>
-            <div class="list">
-              <div class="item">
-                <div class="placeAndPosition">
-                  <div class="place">Университет Джорджии</div>
-                  <div class="position">Научный сотрудник</div>
-                </div>
-                <div class="period">
-                  Сентябрь 2019 - Настоящее время
-                </div>
-                <div class="description">
-                  Провел исследование пользователей и проанализировал данные
-                  для определения дизайна возможности и обоснованные
-                  дизайнерские решения. Сотрудничал с кросс-функциональные
-                  команды для создания каркасов, прототипов и высокоточных
-                  макетов.
-                </div>
-              </div>
-              <div class="item">
-                <div class="placeAndPosition">
-                  <div class="place">Университет Джорджии</div>
-                  <div class="position">Научный сотрудник</div>
-                </div>
-                <div class="period">
-                  Сентябрь 2019 - Настоящее время
-                </div>
-                <div class="description">
-                  Подробная информация о вашем опыте работы приведена здесь.
-                  Кратко продемонстрируйте что вы сделали и чего достигли на
-                  этой должности. Вы можете также рассказать об инструментах,
-                  которые вы использовали.
-                </div>
+              <div class="description" id="aboutText">
+
               </div>
             </div>
           </div>
-          <div class="block">
+          <div class="block" id="experienceBlock">
+            <div class="blockTitle">ОПЫТ РАБОТЫ</div>
+            
+              <div class="item" id="experienceBlockContent">
+                <div class="placeAndPosition">
+                  <div class="place" id="expCompany"></div>
+                  <div class="position" id="expPosition"></div>
+                </div>
+                <div class="period" id="expDate">
+                  
+                </div>
+                <div class="description" id="expInfo">
+                 
+                </div>
+              </div>
+              
+            
+          </div>
+          <div class="block" id="educationBlock">
             <div class="blockTitle">ОБРАЗОВАНИЕ</div>
-            <div class="list">
-              <div class="item">
+            
+              <div class="item" id="educationBlockContent">
                 <div class="placeAndPosition">
-                  <div class="place">Университет Джорджии</div>
-                  <div class="position">
-                    Бакалавр компьютерных наук, Искусственный интеллект
+                  <div class="place"  id="edInstit"></div>
+                  <div class="position" id="edDegree">
+                    
                   </div>
                 </div>
-                <div class="period">
-                  Сентябрь 2019 - Настоящее время
+                <div class="period" id="edDate">
+                  
                 </div>
-                <div class="description">
-                  Здесь вы можете упомянуть о том, что вы изучали, и кратко
-                  изложить подробности о том, что вы узнали. Вы также можете
-                  упомянуть о любых внеклассных мероприятиях, которые вы
-                  проводили в связи с вашей степенью.
+                <div class="description" id="edInfo">
+                  
                 </div>
               </div>
-              <div class="item">
-                <div class="placeAndPosition">
-                  <div class="place">Университет Джорджии</div>
-                  <div class="position">
-                    Бакалавр компьютерных наук, Искусственный интеллект
-                  </div>
-                </div>
-                <div class="period">
-                  Сентябрь 2019 - Настоящее время
-                </div>
-                <div class="description"></div>
-              </div>
-            </div>
+            
           </div>
         </aside>
       </div>
@@ -317,4 +274,4 @@ const CV4 = `
 </html>
 `
 
-module.exports = CV4;
+export default CV4;
